@@ -74,3 +74,4 @@ def buildrows(firewall_list, datacenter_list):
     
     # All done! Return our list of statuses!
     return firewallstatus
+

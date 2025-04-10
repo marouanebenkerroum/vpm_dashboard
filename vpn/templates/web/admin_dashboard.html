@@ -1,0 +1,11 @@
+<h2>Admin Dashboard</h2>
+{% for server, connections in data %}
+  <h3>{{ server.name }} ({{ connections.count }} connections)</h3>
+  <ul>
+    {% for conn in connections %}
+      <li>{{ conn.user.username }} — requested at {{ conn.requested_at }}</li>
+    {% empty %}
+      <li>No users connected.</li>
+    {% endfor %}
+  </ul>
+{% endfor %}

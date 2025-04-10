@@ -16,10 +16,12 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path, include
+from vpn_client.views import admin_dashboard  # replace with actual app name
 
 urlpatterns = [
     path('vpn/', include('vpn.urls')),
     path('admin/', admin.site.urls),    
     path('vpn_client/', include('vpn_client.urls')),
+    path('dashboard/', admin_dashboard, name='admin_dashboard'),
 
 ]

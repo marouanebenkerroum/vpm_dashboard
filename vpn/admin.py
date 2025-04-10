@@ -12,3 +12,4 @@ class DatacenterAdmin(admin.ModelAdmin):
     list_display = ('datacenter_code', 'datacenter_active')
 
 admin.site.register(Datacenter,DatacenterAdmin)
+

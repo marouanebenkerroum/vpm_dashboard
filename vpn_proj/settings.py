@@ -43,7 +43,7 @@ INSTALLED_APPS = [
 ]
 
 LOGIN_URL = 'login'
-LOGIN_REDIRECT_URL = 'vpn_users'
+LOGIN_REDIRECT_URL = '/vpn_client/server_list/'
 LOGOUT_REDIRECT_URL = 'login'
 
 MIDDLEWARE = [

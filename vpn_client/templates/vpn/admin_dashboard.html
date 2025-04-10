@@ -1,0 +1,116 @@
+<h2>VPN Logs Connection Record</h2>
+{% for server, connections in data %}
+  <h3>{{ server.name }} ({{ connections.count }} connections)</h3>
+  <ul>
+    {% for conn in connections %}
+      <li>{{ conn.user.username }} — requested at {{ conn.requested_at }}</li>
+    {% empty %}
+      <li>No users connected.</li>
+    {% endfor %}
+  </ul>
+{% endfor %}
+<style>
+  /* Admin Dashboard Styles */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f8f9fa;
+}
+
+h2 {
+    color: #2c3e50;
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 10px;
+    margin-bottom: 30px;
+    font-size: 28px;
+}
+
+h3 {
+    color: #2980b9;
+    background-color: #e8f4fc;
+    padding: 12px 15px;
+    border-radius: 5px;
+    margin: 25px 0 15px 0;
+    font-size: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+h3 span {
+    background-color: #3498db;
+    color: white;
+    padding: 3px 8px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: normal;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 15px;
+}
+
+li {
+    background-color: white;
+    padding: 15px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    border-left: 4px solid #3498db;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+li:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+}
+
+li:empty {
+    display: none;
+}
+
+/* Empty state styling */
+ul:empty::before,
+li:empty::before {
+    content: "No users connected.";
+    color: #7f8c8d;
+    font-style: italic;
+}
+
+/* Connection status colors */
+.connection-pending {
+    border-left-color: #f39c12;
+}
+
+.connection-active {
+    border-left-color: #2ecc71;
+}
+
+.connection-expired {
+    border-left-color: #95a5a6;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    ul {
+        grid-template-columns: 1fr;
+    }
+    
+    h3 {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    h3 span {
+        margin-top: 5px;
+    }
+}
+</style>
