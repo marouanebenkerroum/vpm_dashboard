@@ -1,0 +1,33 @@
+<title>SRX VPN Dashboard</title>
+<div align="center">
+    {% load static %}
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}" />
+    <!-- Add a header to the table -->
+    <div class="table-title">
+        <h3>SRX VPN Dashboard</h3>
+    </div>
+
+    <!-- Create our first row, which will be a list of each data center location -->
+    {% if firewall_list %}
+        <table class="container">
+        <tr>
+        <th></th>
+        {% for datacenter in datacenter_list %}
+            <th>{{ datacenter.datacenter_code }}</th>
+        {% endfor %}
+        </tr>
+
+        <!-- Then we add a row for each firewall, followed by its status 
+             for each datacenter -->
+        {% for firewall in firewall_status %}
+            <tr>
+            {{firewall|safe}}
+            </tr>
+        {%endfor%}
+
+        </table>
+        <!-- If something goes wrong, we just print an error -->
+    {% else %}
+        No firewalls were found.
+    {% endif %}
+</div>

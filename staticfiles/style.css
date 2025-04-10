@@ -1,0 +1,95 @@
+/* Reset some default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f6f9;
+    color: #333;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+/* Center content and add some spacing */
+div[align="center"] {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table title */
+.table-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+}
+
+.table-title h3 {
+    font-size: 2rem;
+    color: #007bff;
+    text-transform: uppercase;
+}
+
+/* Table styling */
+table.container {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Table header */
+table.container th {
+    background-color: #007bff;
+    color: #fff;
+    padding: 12px;
+    text-align: center;
+    font-size: 1.1rem;
+    font-weight: bold;
+}
+
+/* Table rows */
+table.container tr {
+    border-bottom: 1px solid #ddd;
+}
+
+table.container td {
+    padding: 12px;
+    text-align: center;
+    font-size: 1rem;
+    color: #555;
+}
+
+/* Table row on hover */
+table.container tr:hover {
+    background-color: #f1f1f1;
+}
+
+/* Handling the "No firewalls were found" message */
+table.container {
+    font-style: italic;
+    color: #ff6f61;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Style for error message */
+table.container td {
+    color: #ff6f61;
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+/* Optional: Add spacing and a more refined look to the page */
+.container {
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
