@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Network Attack Detection</title>
+</head>
+<body>
+<h2>Enter Features (comma separated):</h2>
+<form method="post">{% csrf_token %}
+    <input type="text" name="features" size="80">
+    <input type="submit" value="Predict">
+</form>
+</body>
+</html>

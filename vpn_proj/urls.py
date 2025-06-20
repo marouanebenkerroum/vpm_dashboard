@@ -22,6 +22,7 @@ urlpatterns = [
     path('vpn/', include('vpn.urls')),
     path('admin/', admin.site.urls),    
     path('vpn_client/', include('vpn_client.urls')),
+    path('', include('predictor.urls')),
     path('dashboard/', admin_dashboard, name='admin_dashboard'),
 
 ]

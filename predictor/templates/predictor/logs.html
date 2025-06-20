@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Prediction Logs</title>
+</head>
+<body>
+<h2>Prediction Logs</h2>
+<ul>
+    {% for log in logs %}
+        <li>{{ log.timestamp }} - Prediction: {{ log.prediction }} - Input: {{ log.input_data }}</li>
+    {% endfor %}
+</ul>
+<a href="/">Back</a>
+</body>
+</html>
